@@ -1,0 +1,265 @@
+@font-face {
+  font-family: 'Lato';
+  src: url('Lato-Light.woff');
+  font-weight: light;
+  font-style: normal;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: #eaeaea;
+  font-family: arial;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+button {
+  border: 1px solid #42adc7;
+  background-color: #4cc5e3;
+  color: #ffffff;
+  border-radius: 15px;
+  height: 30px;
+  padding: 7px 15px;
+  font-size: 12px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #42adc7;
+
+}
+
+#content {
+  width: 100%;
+  align-content: center;
+}
+
+#toolbar {
+  background-color: black;
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  padding-left: 10px;
+}
+#toolbar .navigation {
+  color: white;
+  font-size: 13px;
+  margin: 15px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+#toolbar .navigation span {
+  padding: 0 5px;
+}
+#toolbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bolder;
+  transition-property: all;
+  transition-duration: 0.2s;
+}
+#toolbar a:hover {
+  color: grey;
+}
+
+#container {
+  padding: 15px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  /*width: 800px;
+  height: 800px;*/
+  margin: 60px auto;
+  border-radius: 5px;
+  transform: scale(0.6);
+  transform-origin: top;
+  box-sizing: content-box;
+}
+#container.razem {
+  width: 1300px;
+  height: 1000px;
+}
+
+#canvas {
+  background-color: white;
+  position: relative;
+}
+.square {
+  position: absolute;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+.square[data-img-url] {
+  cursor: pointer;
+}
+.square::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  box-shadow: none;
+  transition-property: all;
+  transition-duration: 0.2s;
+}
+.hover::after {
+  box-shadow: inset 0px 0px 20px 4px #000000;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-container {
+  margin: 30px auto;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  width: 500px;
+  height: 500px;
+  box-sizing: content-box;
+}
+.modal-content {
+  height: 450px;
+}
+.modal-toolbar {
+  float: right;
+}
+.hidden {
+  visibility: hidden;
+}
+.title-input {
+  border: 0;
+  background: transparent;
+  font-size: 20px;
+  color: white;
+  font-weight: bolder;
+  padding: 5px;
+}
+.title-input:focus {
+  color: black;
+  background-color: white;
+}
+.black {
+  top: 0px;
+  left: 0px;
+  width: 600px;
+  height: 1000px;
+  background-color: rgba(0, 0, 0, .6);
+}
+.black:after {
+  box-shadow: inset 0px 0px 70px 4px #000000;
+}
+.purple {
+  position: absolute;
+  top: 0px;
+  left: 600px;
+  width: 700px;
+  height: 1000px;
+  background-color: #85205A;
+  padding: 10px;
+}
+.textarea {
+  font-family: 'Lato';
+  background-color: transparent;
+  width: 100%;
+  border: 0;
+  padding: 1px;
+  margin: 0;
+  resize: none;
+}
+.textarea:focus {
+  resize: vertical;
+  border: 1px solid grey;
+  padding: 0;
+}
+.wrap {
+    position: relative;
+    display: inline-block;
+}
+.razem {
+  font-size: 80px;
+  position: absolute;
+  left: 96px;
+  top: 132px;
+  width: 612px;
+  height: 688px;
+}
+.razem .textarea {
+  color: #ffffff;
+}
+.meme-title {
+  /*position: absolute;
+  left: 620px;
+  top: 20px;*/
+  width: 100%;
+  padding: 40px 20px;
+}
+.meme-title .textarea {
+  font-size: 65px;
+  font-weight: bold;
+  height: 200px;
+  min-height: 100px;
+}
+.meme-text {
+  /*position: absolute;
+  left: 620px;
+  top: 250px;*/
+  width: 100%;
+  padding: 0px 20px;
+}
+.meme-text .textarea {
+  font-size: 65px;
+  height: 600px;
+  min-height: 100px;
+  max-height: 700px;
+}
+.logo {
+  position: absolute;
+  top: 780px;
+  left: 1080px;
+  width: 200px;
+  height: 200px;
+  background-image: url('logo.jpg');
+  background-size: 100%;
+}
+
+#font-size {
+  position: absolute;
+  top: 80px;
+  left: 10px;
+  width: 40px;
+  transform: rotate(90deg);
+}
+
+#font-size input {
+  width: 160px;
+}
+
+.textarea {
+  transition-property: all;
+  transition-duration: 0.2s;
+}

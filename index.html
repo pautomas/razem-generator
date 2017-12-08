@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <script type="text/javascript" src="dom-to-image.min.js"></script>
+    <script type="text/javascript" src="croppie.min.js"></script>
+    <script type="text/javascript" src="pimio.js"></script>
+    <script type="text/javascript" src="toolbar.js"></script>
+    <script type="text/javascript" src="canvas.js"></script>
+    <script type="text/javascript" src="razem.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <link href="croppie.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="content">
+      <label id="font-size">
+        <input type="range" min="30" max="100" step="5" value="65"></input>
+      </label>
+      <div id="container" class="razem">
+        <div id="canvas">
+          <div class="square black"></div>
+          <div class="purple">
+            <div class="wrap meme-title">
+              <textarea placeholder="title" class="textarea"></textarea>
+            </div>
+            <div class="wrap meme-text">
+              <textarea type="text" placeholder="description" class="textarea"></textarea>
+            </div>
+          </div>
+          <div class="logo"></div>
+        </div>
+      </div>
+      <div id="toolbar">
+        <input class="title-input" type="text" placeholder="Click to add a title..."/>
+        <button id="export" data-name="razem">Export</button>
+      </div>
+      <div class="modal hidden">
+        <div class="modal-container">
+          <div class="modal-content">
+            <div class="croppie"></div>
+          </div>
+          <div class="modal-toolbar">
+            <button id="save-edit">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+      toolbar.init();
+      canvas.init();
+      razem.init();
+    } else {
+      alert('The File APIs are not fully supported in this browser.');
+    }
+  </script>
+
+<html>
